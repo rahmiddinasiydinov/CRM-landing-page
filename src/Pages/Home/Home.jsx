@@ -80,9 +80,8 @@ function Home(props){
           <div className="container">
             <h2 className="home__teachers--title">Bizning o’qituvchilar</h2>
             <Swiper
-              modules={[ Navigation, Pagination]}
+              modules={[Pagination]}
               spaceBetween={20}
-              navigation
               slidesPerView={4}
               pagination ={{clickable:true}}
               onSlideChange={() => console.log("slide change")}
