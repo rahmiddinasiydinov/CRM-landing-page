@@ -1,0 +1,38 @@
+@import '../../SCSS/Variables.scss';
+
+.result{
+    display: flex;
+    flex-direction: column;
+    &__num{
+        color: #fff;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 125%;
+        margin-bottom: 8px;
+    }
+    &__people{
+        color: #fff;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 125%;
+    }
+    &__line{
+        &--group{
+            @include line__group;
+            width: 100%;
+        }
+        &--first{
+            @include first;
+            width: 70%;
+            height: 2px;
+            background-color: #fff;
+            margin-right: 16px;
+        }
+        &--second{
+            @include second;
+            height: 2px;
+            background-color: #fff;
+            width: 20%;
+        }
+    }
+}

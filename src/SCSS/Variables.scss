@@ -1,0 +1,18 @@
+@mixin  line__group {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;    
+}
+@mixin first {
+    width: 448px;
+    border: none;
+    background-color: #000;
+    height: 4px;
+}
+@mixin second {
+    width: 62px;
+    border: none;
+    background-color: #000;
+    height: 4px;
+}

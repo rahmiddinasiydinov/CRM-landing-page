@@ -1,7 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import './App.scss';
 import phoneIcon from './images/phone.png';
-
+import Home from './Pages/Home/Home';
+import { Admin } from './Pages/AdminPanel/Admin';
+import {Route, Routes} from 'react-router'
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
               <ul className="header__contact--list">
                 <li className="header__contact--item">
                   <a href="tel:+998900113861" className="header__contact--tel">
-                    +998900113861
+                    <img src={phoneIcon} alt="" className="header__contact--phone" /> +998900113861
                   </a>
                 </li>
                 <li className="header__contact--item"><NavLink className="header__contact--admin" to='/admin'>Kirish</NavLink></li>
@@ -39,6 +41,10 @@ function App() {
           </div>
         </div>
       </header>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/admin' element={<Admin/>}></Route>
+      </Routes>
     </div>
   );
 }
