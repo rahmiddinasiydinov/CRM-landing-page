@@ -31,7 +31,7 @@ function App() {
                 <li className="header__contact--item">
                   <select name="language" id="lang" className="header__contact--lang">
                     <option value="uz">UZ</option>
-                    <option value="re">RU</option>
+                    <option value="re">RU</option> 
                     <option value="en">EN</option>
                   </select></li>
               </ul>
