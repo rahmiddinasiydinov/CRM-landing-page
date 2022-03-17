@@ -1,0 +1,114 @@
+.subject{
+    width: 310px;
+    max-width: 100%;
+    height: 616px;
+    padding: 24px;
+    background-color: #C4C4C4;
+    border-radius: 16px;
+    &__img{
+        width: 262px;
+        height: 172px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+    &__title{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 125%;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    &__desc{
+        width: 262px;
+        max-width: 100%;
+        font-size: 14px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 24px;
+        
+    }
+    &__speciality{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 125%;
+        display: block;
+        text-align: center;
+    }
+    &__teacher{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        &__img{
+            width: 60px;
+            height: 60px;
+        }
+        &--degree{
+            display: flex;
+            align-items: center;
+            width: 16px;
+            height: 16px;
+            left: 239px;
+            top: 3539px;
+            margin-bottom: 8px;
+        }
+        &--name{
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 125%;
+        }
+    }
+    &__line{
+        border: 1px solid #000000;
+        height: 0;
+        width: 262px;
+        max-width: 100%;
+    }
+    &__about{
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__duration{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 125%;
+        &--value{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 125%;
+            display: block;
+            margin-top: 8px;
+        }
+    }
+    &__btn{
+        margin-top: 24px;
+        display: block;
+        padding: 14px 60px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        background-color: #9A9A9A;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: .5s;
+        &:hover{
+            transition: .5s;
+            background-color: #BABABA;
+        }
+        &:active{
+             background-color: #DADADA;  
+        }
+    }
+}
+.star{
+    margin-right: 4px;
+    &:last-child{
+        margin-right: 0;
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        margin-left: 16px;
+    }
+}
