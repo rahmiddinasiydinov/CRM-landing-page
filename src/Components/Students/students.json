@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Jamoldinov Iqboljon",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis vulputate vulputate quis dignissim mi massa. Integer maecenas urna, vitae, tristique elit. Tellus faucibus nunc enim vitae porttitor ut velit quam.",
+    "image": 3
+  },
+  {
+    "id": 2,
+    "name": "Turg’unboyer Doniyor",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis vulputate vulputate quis dignissim mi massa. Integer maecenas urna, vitae, tristique elit",
+    "image": 1
+  },
+  {
+    "id": 3,
+    "name": "Abduqahorov Biloldin",
+    "text": "Venenatis vulputate vulputate quis dignissim mi massa. Integer maecenas urna, vitae, tristique elit. Tellus faucibus nunc enim vitae porttitor ut velit quam.",
+    "image": 2
+  },
+  {
+    "id": 4,
+    "name": "Asadov Javohir",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis vulputate vulputate quis dignissim mi massa.",
+    "image": 3
+  },
+  {
+    "id": 5,
+    "name": "Shokirov Anvar",
+    "text": "Integer maecenas urna, vitae, tristique elit. Tellus faucibus nunc enim vitae porttitor ut velit quam.",
+    "image": 1
+  }
+]
+

@@ -2,18 +2,26 @@ import './Home.scss';
 import about from '../../images/aboutuz.png';
 import { Results } from '../../Components/Results/Results';
 import { Teacher } from '../../Components/Teachers/Teacher';
+import { Students } from '../../Components/Students/Students';
+import { Subject } from '../../Components/Subjects/Subjects';
 import teacher1 from '../../images/teacher1.png';
 import teacher2 from '../../images/teacher2.png';
 import teacher3 from '../../images/teacher3.png';
 import teacher4 from "../../images/teacher4.png";
+import subject from '../../images/subject.png';
+import news from '../../images/news.png';
+import teacher_subject from '../../images/teacher.png';
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectFade } from "swiper";
+import { EffectCoverflow } from 'swiper';
+import {  Pagination} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 function Home(props){
-
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8];
     return (
       <div className="home">
         <div className="home__heaeder">
@@ -81,12 +89,12 @@ function Home(props){
             <h2 className="home__teachers--title">Bizning o’qituvchilar</h2>
             <Swiper
               modules={[Pagination]}
-              spaceBetween={20}
+              spaceBetween={150}
               slidesPerView={4}
-              pagination ={{clickable:true}}
+              pagination={{ clickable: true }}
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
-            //   className="home__teachers--list"
+              //   className="home__teachers--list"
             >
               <SwiperSlide>
                 <Teacher
@@ -179,6 +187,92 @@ function Home(props){
                 />
               </SwiperSlide>
             </Swiper>
+          </div>
+        </div>
+        <Students />
+        <div className="home__subjects">
+          <div className="container">
+            <h2 className="home__subjects--title">Kurslarimiz</h2>
+            <Swiper
+              modules={[EffectCoverflow, Pagination]}
+              effect={"coverflow"}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={"auto"}
+              pagination={{ clickable: true }}
+              coverflowEffect={{
+                rotate: 30,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              className="mySwiper"
+            >
+              {arr.map((e) => {
+                return (
+                  <SwiperSlide>
+                    <Subject
+                      img={subject}
+                      desc={
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc turpis laoreet congue ut eu id."
+                      }
+                      subject={"Matematika"}
+                      name={"Muxamadaliyev Ibroxim"}
+                      teacher_img={teacher_subject}
+                      job={"Mentor"}
+                      duration={10}
+                      price={200000}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+        </div>
+        <div className="home__news">
+          <div className="container">
+            <h2 className="news__title">Yangiliklar</h2>
+            <div className="news__wrapper">
+              <div className="news__img--wrapper">
+                <div className="line__group">
+                  <span className="news__line--first line__right"></span>
+                  <span className="news__line--second"></span>
+                </div>
+                <img src={news} alt="" className="news__img" />
+                <div className="line__group">
+                  <span className="news__line--second"></span>
+                  <span className="news__line--first line__left"></span>
+                </div>
+              </div>
+              <p className="news__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl,
+                fermentum ultrices in sed neque interdum aliquam. Pretium nibh
+                aliquet lectus mattis cras vulputate arcu consequat. Arcu
+                pharetra auctor odio risus vivamus nisi, ac est. Felis tellus
+                sed ut ac. Rutrum venenatis a mi amet nulla sit at lacus nisi.
+              </p>
+            </div>
+            <div className="news__wrapper">
+              <p className="news__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl,
+                fermentum ultrices in sed neque interdum aliquam. Pretium nibh
+                aliquet lectus mattis cras vulputate arcu consequat. Arcu
+                pharetra auctor odio risus vivamus nisi, ac est. Felis tellus
+                sed ut ac. Rutrum venenatis a mi amet nulla sit at lacus nisi.
+              </p>
+              <div className="news__img--wrapper">
+                <div className="line__group">
+                  <span className="news__line--first line__right"></span>
+                  <span className="news__line--second"></span>
+                </div>
+                <img src={news} alt="" className="news__img" />
+                <div className="line__group">
+                  <span className="news__line--second"></span>
+                  <span className="news__line--first line__left"></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
