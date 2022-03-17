@@ -241,8 +241,8 @@ function Home(props){
                 </div>
                 <img src={news} alt="" className="news__img" />
                 <div className="line__group">
-                  <span className="news__line--second"></span>
-                  <span className="news__line--first line__left"></span>
+                  <span className="news__line--second line__light"></span>
+                  <span className="news__line--first line__left line__light"></span>
                 </div>
               </div>
               <p className="news__text">
@@ -268,8 +268,8 @@ function Home(props){
                 </div>
                 <img src={news} alt="" className="news__img" />
                 <div className="line__group">
-                  <span className="news__line--second"></span>
-                  <span className="news__line--first line__left"></span>
+                  <span className="news__line--second line__light"></span>
+                  <span className="news__line--first line__left line__light"></span>
                 </div>
               </div>
             </div>

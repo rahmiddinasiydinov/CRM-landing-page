@@ -139,7 +139,7 @@
         @include second;
     }
     &__light{
-        background-color: #BBBBBB;
+        background-color: #BBBBBB !important;
     }
     &__left{
         margin-left: 20px;
@@ -172,19 +172,21 @@
 }
 .news{
     &__title{
-             font-weight: 700;
-            font-size: 48px;
-            line-height: 125%;
-            color: #000000;
-            margin-bottom: 68px
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 125%;
+        color: #000000;
+        margin-bottom: 68px
     }
     &__line{
         &--first{
             @include first;
+            height: 2px;
             width: 70%;
         }
         &--second{
             @include second;
+            height: 2px;
             width: 20%;
         }
         
@@ -199,7 +201,10 @@
     }
     &__text{
         padding: 24px 90px 24px 24px;
-        width: 630px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        width: 530px;
         background-color: #E3E3E3;
         border-radius: 16px 128px 128px 16px;
         
