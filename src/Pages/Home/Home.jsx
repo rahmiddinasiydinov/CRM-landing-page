@@ -11,10 +11,16 @@ import teacher4 from "../../images/teacher4.png";
 import subject from '../../images/subject.png';
 import news from '../../images/news.png';
 import teacher_subject from '../../images/teacher.png';
+import telegram from "../../images/telegram.svg";
+import instagram from "../../images/instagram.svg";
+import facebook from '../../images/facebook.svg';
+import phone from '../../images/phone.png';
+
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from 'swiper';
-import {  Pagination} from "swiper";
+import {  Pagination, Navigation} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
@@ -24,7 +30,7 @@ function Home(props){
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
     return (
       <div className="home">
-        <div className="home__heaeder">
+        <section id='1' className="home__heaeder">
           <div className="container">
             <div className="home__header--left">
               <h1 className="home__header--title">
@@ -38,8 +44,8 @@ function Home(props){
               </a>
             </div>
           </div>
-        </div>
-        <div className="home__about">
+        </section>
+        <section id = '2' className="home__about">
           <div className="container">
             <h2 className="home__about--title">Biz haqimizda</h2>
             <div className="home__about--wrapper">
@@ -73,8 +79,8 @@ function Home(props){
               </div>
             </div>
           </div>
-        </div>
-        <div className="home__results">
+        </section>
+        <section className="home__results">
           <div className="container">
             <div className="home__results--list">
               <Results num={60} people={"O'qituvchilar"} />
@@ -83,14 +89,15 @@ function Home(props){
               <Results num={60} people={"Oflayn kurslar"} />
             </div>
           </div>
-        </div>
-        <div className="home__teachers">
+        </section>
+        <section className="home__teachers">
           <div className="container">
             <h2 className="home__teachers--title">Bizning o’qituvchilar</h2>
             <Swiper
-              modules={[Pagination]}
+              modules={[Pagination, Navigation]}
               spaceBetween={150}
               slidesPerView={4}
+              navigation
               pagination={{ clickable: true }}
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
@@ -188,9 +195,9 @@ function Home(props){
               </SwiperSlide>
             </Swiper>
           </div>
-        </div>
+        </section>
         <Students />
-        <div className="home__subjects">
+        <section id='3' className="home__subjects">
           <div className="container">
             <h2 className="home__subjects--title">Kurslarimiz</h2>
             <Swiper
@@ -209,9 +216,9 @@ function Home(props){
               }}
               className="mySwiper"
             >
-              {arr.map((e) => {
+              {arr.map((e, i) => {
                 return (
-                  <SwiperSlide>
+                  <SwiperSlide key={i}>
                     <Subject
                       img={subject}
                       desc={
@@ -229,8 +236,8 @@ function Home(props){
               })}
             </Swiper>
           </div>
-        </div>
-        <div className="home__news">
+        </section>
+        <section id='4' className="home__news">
           <div className="container">
             <h2 className="news__title">Yangiliklar</h2>
             <div className="news__wrapper">
@@ -274,7 +281,82 @@ function Home(props){
               </div>
             </div>
           </div>
-        </div>
+        </section>
+        <section id ='5' className="home__contact">
+          <div className="container">
+            <div className="home__contact--wrapper">
+              <form action="#" className="home__contact--form">
+                <h3 className="home__contact--subtitle">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </h3>
+                <input
+                  type="text"
+                  className="home__contact--input"
+                  placeholder="Ism familyangiz"
+                />
+                <input
+                  type="tel"
+                  className="home__contact--input"
+                  placeholder="Telefon raqamingiz"
+                />
+                <input
+                  type="email"
+                  className="home__contact--input"
+                  placeholder="Email manzilingiz"
+                />
+                <button type="submit" className="home__contact--submit">
+                  Yuborish
+                </button>
+              </form>
+              <h2 className="home__contact--title">Kontakt</h2>
+            </div>
+          </div>
+        </section>
+        <section className="home__footer">
+          <div className="container">
+            <div className="home__footer--wrapper">
+              <ul className="home__footer--social">
+                <li className="home__footer--item">
+                  <a href="#" className="home__footer--link">
+                    {" "}
+                    <img
+                      src={telegram}
+                      alt=""
+                      className="home__footer--img"
+                    />{" "}
+                    Telegram
+                  </a>
+                </li>
+                <li className="home__footer--item">
+                  <a href="#" className="home__footer--link">
+                    {" "}
+                    <img
+                      src={facebook}
+                      alt=""
+                      className="home__footer--img"
+                    />{" "}
+                    Facebook
+                  </a>
+                </li>
+                <li className="home__footer--item">
+                  <a href="#" className="home__footer--link">
+                    {" "}
+                    <img
+                      src={instagram}
+                      alt=""
+                      className="home__footer--img"
+                    />{" "}
+                    Instagram
+                  </a>
+                </li>
+              </ul>
+              <a href="tel:+998900113861" className="home__footer--link">
+               <img src={phone} alt="" className="home__footer--img" /> +998900113861
+              </a>
+            </div>
+            <span className="home__footer--copyright">&copy;Copyright2022</span>
+          </div>
+        </section>
       </div>
     );
 }
