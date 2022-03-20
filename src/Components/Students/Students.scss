@@ -92,3 +92,17 @@
 .arrow__disabled{
     opacity: .3;
 }
+
+@media screen and (max-width:768px) {
+    .student{
+    &__title{
+        font-size: 48x;
+    }
+    &__item{
+        display: none;
+        &--main{
+            display: flex;
+        }
+    }
+}
+}

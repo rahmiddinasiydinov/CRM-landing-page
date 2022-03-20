@@ -36,3 +36,20 @@
         }
     }
 }
+
+
+@media screen and (max-width:768px) {
+    
+.result{
+    &__num{
+        font-size: 32px;
+    }
+
+    &__line{
+        &--group{
+         display: none !important;
+        }
+   
+    }
+}
+}

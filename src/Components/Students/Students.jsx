@@ -24,7 +24,7 @@ export function Students(props) {
               }`}
               onClick={(e) =>
                 currentSlide > 0
-                  ? setCurrentSlide(currentSlide-1)
+                  ? setCurrentSlide(currentSlide - 1)
                   : currentSlide
               }
             >
@@ -59,7 +59,7 @@ export function Students(props) {
                 ""
               )}
             </li>
-            <li className="student__item">
+            <li className="student__item student__item--main">
               {" "}
               <img
                 src={img[students[currentSlide].image - 1]}
