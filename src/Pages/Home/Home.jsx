@@ -17,7 +17,6 @@ import facebook from '../../images/facebook.svg';
 import phone from '../../images/phone.png';
 
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from 'swiper';
 import {  Pagination, Navigation} from "swiper";
@@ -102,8 +101,8 @@ function Home(props){
               <h2 className="home__teachers--title">Bizning o’qituvchilar</h2>
               <Swiper
                 modules={[Pagination, Navigation]}
-                spaceBetween={window.screen.width>768?150:50}
-                slidesPerView={'auto'}
+                spaceBetween={window.screen.width > 768 ? 150 : 100}
+                slidesPerView={"auto"}
                 navigation
                 pagination={{ clickable: true }}
                 onSlideChange={() => console.log("slide change")}
@@ -247,43 +246,47 @@ function Home(props){
           <section id="4" className="home__news">
             <div className="container">
               <h2 className="news__title">Yangiliklar</h2>
-              <div className="news__wrapper">
-                <div className="news__img--wrapper">
-                  <div className="line__group">
-                    <span className="news__line--first line__right"></span>
-                    <span className="news__line--second"></span>
+              <div className="news__box">
+                <div className="news__wrapper">
+                  <div className="news__img--wrapper">
+                    <div className="line__group">
+                      <span className="news__line--first line__right"></span>
+                      <span className="news__line--second"></span>
+                    </div>
+                    <img src={news} alt="" className="news__img" />
+                    <div className="line__group">
+                      <span className="news__line--second line__light"></span>
+                      <span className="news__line--first line__left line__light"></span>
+                    </div>
                   </div>
-                  <img src={news} alt="" className="news__img" />
-                  <div className="line__group">
-                    <span className="news__line--second line__light"></span>
-                    <span className="news__line--first line__left line__light"></span>
-                  </div>
+                  <p className="news__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nisl, fermentum ultrices in sed neque interdum aliquam.
+                    Pretium nibh aliquet lectus mattis cras vulputate arcu
+                    consequat. Arcu pharetra auctor odio risus vivamus nisi, ac
+                    est. Felis tellus sed ut ac. Rutrum venenatis a mi amet
+                    nulla sit at lacus nisi.
+                  </p>
                 </div>
-                <p className="news__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl,
-                  fermentum ultrices in sed neque interdum aliquam. Pretium nibh
-                  aliquet lectus mattis cras vulputate arcu consequat. Arcu
-                  pharetra auctor odio risus vivamus nisi, ac est. Felis tellus
-                  sed ut ac. Rutrum venenatis a mi amet nulla sit at lacus nisi.
-                </p>
-              </div>
-              <div className="news__wrapper">
-                <p className="news__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl,
-                  fermentum ultrices in sed neque interdum aliquam. Pretium nibh
-                  aliquet lectus mattis cras vulputate arcu consequat. Arcu
-                  pharetra auctor odio risus vivamus nisi, ac est. Felis tellus
-                  sed ut ac. Rutrum venenatis a mi amet nulla sit at lacus nisi.
-                </p>
-                <div className="news__img--wrapper">
-                  <div className="line__group">
-                    <span className="news__line--first line__right"></span>
-                    <span className="news__line--second"></span>
-                  </div>
-                  <img src={news} alt="" className="news__img" />
-                  <div className="line__group">
-                    <span className="news__line--second line__light"></span>
-                    <span className="news__line--first line__left line__light"></span>
+                <div className="news__wrapper">
+                  <p className="news__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nisl, fermentum ultrices in sed neque interdum aliquam.
+                    Pretium nibh aliquet lectus mattis cras vulputate arcu
+                    consequat. Arcu pharetra auctor odio risus vivamus nisi, ac
+                    est. Felis tellus sed ut ac. Rutrum venenatis a mi amet
+                    nulla sit at lacus nisi.
+                  </p>
+                  <div className="news__img--wrapper">
+                    <div className="line__group">
+                      <span className="news__line--first line__right"></span>
+                      <span className="news__line--second"></span>
+                    </div>
+                    <img src={news} alt="" className="news__img" />
+                    <div className="line__group">
+                      <span className="news__line--second line__light"></span>
+                      <span className="news__line--first line__left line__light"></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -306,7 +309,7 @@ function Home(props){
                     className="home__contact--input"
                     placeholder="Telefon raqamingiz"
                   />
-       
+
                   <button type="submit" className="home__contact--submit">
                     Yuborish
                   </button>
@@ -338,34 +341,36 @@ function Home(props){
                   </a>
                 </li>
                 <li className="home__footer--item">
-                  <a href="#" className="home__footer--link">
-                    {" "}
-                    <img
-                      src={telegram}
-                      alt=""
-                      className="home__footer--img"
-                    />{" "}
-                  </a>
-                </li>
-                <li className="home__footer--item">
-                  <a href="#" className="home__footer--link">
-                    {" "}
-                    <img
-                      src={facebook}
-                      alt=""
-                      className="home__footer--img"
-                    />{" "}
-                  </a>
-                </li>
-                <li className="home__footer--item">
-                  <a href="#" className="home__footer--link">
-                    {" "}
-                    <img
-                      src={instagram}
-                      alt=""
-                      className="home__footer--img"
-                    />{" "}
-                  </a>
+                  <span className="home__footer--media">
+                    <a href="#" className="home__footer--link">
+                      {" "}
+                      <img
+                        src={telegram}
+                        alt=""
+                        className="home__footer--img"
+                      />{" "}
+                    </a>
+                  </span>
+                  <span className="home__footer--media">
+                    <a href="#" className="home__footer--link">
+                      {" "}
+                      <img
+                        src={facebook}
+                        alt=""
+                        className="home__footer--img"
+                      />{" "}
+                    </a>
+                  </span>
+                  <span className="home__footer--media">
+                    <a href="#" className="home__footer--link">
+                      {" "}
+                      <img
+                        src={instagram}
+                        alt=""
+                        className="home__footer--img"
+                      />{" "}
+                    </a>
+                  </span>
                 </li>
               </ul>
               <a href="tel:+998900113861" className="home__footer--tel">

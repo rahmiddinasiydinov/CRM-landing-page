@@ -4,7 +4,6 @@ import phoneIcon from './images/phone.png';
 import Home from './Pages/Home/Home';
 import { Admin } from './Pages/AdminPanel/Admin';
 import { Route, Routes } from 'react-router';
-
 function App() {
   return (
     <div className="App">

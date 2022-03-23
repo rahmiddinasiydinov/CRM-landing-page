@@ -53,3 +53,16 @@
     }
 }
 }
+
+@media screen and (max-width:425px) {
+    
+.result{
+    margin-top: 50px;
+    align-items: center;
+    &__num{
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+
+}
+}
