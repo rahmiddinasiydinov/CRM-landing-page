@@ -151,8 +151,8 @@ ul{
 
 
 @media screen and (max-width:768px) {
-   .hamburger{
-    display: block !important;
+   .hamburger-wrapper{
+    display: block;
   }
   .header{
     &__links{
@@ -243,9 +243,7 @@ ul{
 }
 
 @media screen and (max-width:425px) {
-  .hamburger-wrapper{
-    display: block;
-  }
+ 
    .header{
      &__contact{
        &--tel{
