@@ -1,6 +1,8 @@
 @import './fonts/fonts.scss';
 @import './SCSS/Variables.scss';
-
+.hamburger-wrapper{
+  display: none;
+}
 .App-header {
   min-height: 800px;
   position: relative;
@@ -27,7 +29,8 @@
   color: #000;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
@@ -72,6 +75,10 @@ ul{
     position: relative !important;
     z-index: 0 !important;
   }
+  &__hamburger{
+    position: relative;
+    z-index: 1000;
+  }
   &__links{
     &--list{
       display: flex;
@@ -88,7 +95,7 @@ ul{
       
     }
     &--item{
-      font-family: 'Montserrat';
+      font-family: 'Montserrat', sans-serif;
       &:first-child{
         margin-right: 100px;
         font-size: 32px;
@@ -125,6 +132,7 @@ ul{
       text-decoration: none;
       display: flex;
       align-items: center;
+      padding-bottom: 0 !important;
       @include hover;
     }
     &--phone{
@@ -141,8 +149,16 @@ ul{
   }
 }
 
+
 @media screen and (max-width:768px) {
-  
+   .hamburger{
+    display: block !important;
+  }
+  .header{
+    &__links{
+      display: none;
+    }
+  }
   .circle{
     bottom: 0;
     border-radius: 50%;
@@ -154,40 +170,6 @@ ul{
     z-index: 0;
     left: -1550px;
   }
-  *{
-    scroll-behavior: smooth;
-    margin: 0;
-    color: #000;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins';
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
-    
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #000;
-      border-radius: 5px;
-    }
-    
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: rgba($color: #000000, $alpha: .7);
-    }
-  }
-  a{
-    text-decoration: none;
-  }
-  ul{
-    list-style-type: none;
-  }
   .container{
     width: 2000px;
     margin: 0 auto;
@@ -196,36 +178,23 @@ ul{
   }
   .header{
     position: relative;
-    z-index: 1;
-    padding: 20px 0;
+    padding-top: 36px;
     &__wrapper{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: flex-end;
     }
     &__links{
       &--list{
-        display: flex;
         justify-content: flex-start;
         align-items: center;
         list-style-type: none;
         
       }
-      &--link{
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 120%;
-        @include hover;
-        
-      }
       &--item{
         font-family: 'Montserrat';
         &:first-child{
-          margin-right: 100px;
-          font-size: 32px;
-          
+          margin-right:0;
         }
-        margin-right: 32px;
+        margin-right:0;
       }
     }
     &__contact{
@@ -242,7 +211,7 @@ ul{
         line-height: 120%;
         margin-right: 20px;
         &:last-child{
-          margin-left: 50px;
+          margin-left: 0;
         }
       }
       &--admin{
@@ -274,8 +243,24 @@ ul{
 }
 
 @media screen and (max-width:425px) {
+  .hamburger-wrapper{
+    display: block;
+  }
+   .header{
+     &__contact{
+       &--tel{
+         display: none;
+       }
+     }
+     &__contact{
+       &--lang{
+         margin-right: 10px;
+       }
+     }
+   }
   .container{
     padding: 0 10px;
   }  
 }
+
 

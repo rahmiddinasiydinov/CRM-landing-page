@@ -4,11 +4,13 @@ import student1 from '../../images/student1.png';
 import student2 from '../../images/student2.png';
 import student3 from "../../images/student3.png";
 import arrow from '../../images/arrow.svg';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../Contexts/Context';
 
 
 
 export function Students(props) {
+   const {lang, chooseLang} = useContext(ThemeContext)
     const img = [student1, student2, student3];
     const [currentSlide, setCurrentSlide] = useState(1);
  
@@ -16,7 +18,7 @@ export function Students(props) {
     return (
       <div className="student">
         <div className="container">
-          <h2 className="student__title">Bitiruvchilarimiz fikri</h2>
+          <h2 className="student__title">{lang.student_points}</h2>
           <ul className="student__list">
             <button
               className={`student__arrow--left ${

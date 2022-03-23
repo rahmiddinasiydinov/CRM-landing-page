@@ -24,22 +24,21 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { ThemeContext } from '../../Contexts/Context';
+import { useContext } from 'react';
 
 function Home(props){
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  const { lang, changeLang } = useContext(ThemeContext)
     return (
       <div className="home">
         <header id="1" className="home__heaeder">
           <div className="container">
             <div className="home__header--left">
-              <h1 className="home__header--title">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </h1>
-              <div className="home__header--text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </div>
+              <h1 className="home__header--title">{lang.main_title}</h1>
+              <div className="home__header--text">{lang.main_text}</div>
               <a href="#" className="home__header--btn">
-                Kurs tanlash
+                {lang.main_btn}
               </a>
             </div>
           </div>
@@ -47,7 +46,7 @@ function Home(props){
         <main>
           <section id="2" className="home__about">
             <div className="container">
-              <h2 className="home__about--title">Biz haqimizda</h2>
+              <h2 className="home__about--title">{lang.about}</h2>
               <div className="home__about--wrapper">
                 <div className="home__about--left">
                   <div className="line__group">
@@ -65,22 +64,12 @@ function Home(props){
                   </div>
                 </div>
                 <div className="home__about--right">
-                  <h3 className="home__about--subtitle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </h3>
+                  <h3 className="home__about--subtitle">{lang.about_title}</h3>
                   <div className="home__about--text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Bibendum accumsan augue integer neque suspendisse. Lacus
-                    viverra urna aliquam elementum urna maecenas. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Quos,
-                    temporibus?
+                    {lang.about_text}
                     <br />
                     <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Bibendum accumsan augue integer neque suspendisse. Lacus
-                    viverra urna aliquam elementum urna maecenas. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Optio,
-                    voluptas.
+                    {lang.about_text}
                   </div>
                 </div>
               </div>
@@ -89,16 +78,16 @@ function Home(props){
           <section className="home__results">
             <div className="container">
               <div className="home__results--list">
-                <Results num={60} people={"O'qituvchilar"} />
-                <Results num={926} people={"O'quvchilar"} />
-                <Results num={25} people={"Onlayn kurslar"} />
-                <Results num={60} people={"Oflayn kurslar"} />
+                <Results num={60} people={lang.teacher} />
+                <Results num={926} people={lang.students} />
+                <Results num={25} people={lang.online_courses} />
+                <Results num={60} people={lang.courses} />
               </div>
             </div>
           </section>
           <section className="home__teachers">
             <div className="container">
-              <h2 className="home__teachers--title">Bizning o’qituvchilar</h2>
+              <h2 className="home__teachers--title">{ lang.our_teachers}</h2>
               <Swiper
                 modules={[Pagination, Navigation]}
                 spaceBetween={window.screen.width > 768 ? 150 : 100}
@@ -205,7 +194,7 @@ function Home(props){
           <Students />
           <section id="3" className="home__subjects">
             <div className="container home__subjects--tablet">
-              <h2 className="home__subjects--title">Kurslarimiz</h2>
+              <h2 className="home__subjects--title">{lang.course}</h2>
               <Swiper
                 modules={[EffectCoverflow, Pagination]}
                 effect={"coverflow"}
@@ -245,7 +234,7 @@ function Home(props){
           </section>
           <section id="4" className="home__news">
             <div className="container">
-              <h2 className="news__title">Yangiliklar</h2>
+              <h2 className="news__title">{ lang.news}</h2>
               <div className="news__box">
                 <div className="news__wrapper">
                   <div className="news__img--wrapper">
@@ -260,22 +249,12 @@ function Home(props){
                     </div>
                   </div>
                   <p className="news__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nisl, fermentum ultrices in sed neque interdum aliquam.
-                    Pretium nibh aliquet lectus mattis cras vulputate arcu
-                    consequat. Arcu pharetra auctor odio risus vivamus nisi, ac
-                    est. Felis tellus sed ut ac. Rutrum venenatis a mi amet
-                    nulla sit at lacus nisi.
+                    {lang.news_text}
                   </p>
                 </div>
                 <div className="news__wrapper">
                   <p className="news__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nisl, fermentum ultrices in sed neque interdum aliquam.
-                    Pretium nibh aliquet lectus mattis cras vulputate arcu
-                    consequat. Arcu pharetra auctor odio risus vivamus nisi, ac
-                    est. Felis tellus sed ut ac. Rutrum venenatis a mi amet
-                    nulla sit at lacus nisi.
+                    {lang.news_text}
                   </p>
                   <div className="news__img--wrapper">
                     <div className="line__group">
@@ -297,24 +276,24 @@ function Home(props){
               <div className="home__contact--wrapper">
                 <form action="#" className="home__contact--form">
                   <h3 className="home__contact--subtitle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    {lang.contact_title}
                   </h3>
                   <input
                     type="text"
                     className="home__contact--input"
-                    placeholder="Ism familyangiz"
+                    placeholder={lang.contact_name}
                   />
                   <input
                     type="tel"
                     className="home__contact--input"
-                    placeholder="Telefon raqamingiz"
+                    placeholder={lang.contact_tel}
                   />
 
                   <button type="submit" className="home__contact--submit">
-                    Yuborish
+                    {lang.send}
                   </button>
                 </form>
-                <h2 className="home__contact--title">Kontakt</h2>
+                <h2 className="home__contact--title">{ lang.contact}</h2>
               </div>
             </div>
           </section>
@@ -325,19 +304,19 @@ function Home(props){
               <ul className="home__footer--social">
                 <li className="home__footer--item">
                   <a href="#0" className="home__footer--link landing">
-                    Bosh sahifa
+                     {lang.main}
                   </a>
                   <a href="#2" className="home__footer--link landing">
-                    Biz haqimizda
+                   {lang.about}
                   </a>
                   <a href="#3" className="home__footer--link landing">
-                    kurslarimiz
+                    {lang.course}
                   </a>
                   <a href="#4" className="home__footer--link landing">
-                    Yangiliklar
+                    {lang.news}
                   </a>
                   <a href="#5" className="home__footer--link landing">
-                    Kontakt
+                   {lang.contact}
                   </a>
                 </li>
                 <li className="home__footer--item">
