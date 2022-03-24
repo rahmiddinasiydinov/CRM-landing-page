@@ -1,8 +1,9 @@
-import { createContext, Component, useState } from "react";
+import { createContext, useState } from "react";
 import App from "../App";
 
 const language = {
   uz: {
+    id: "uz",
     main: "Bosh sahifa",
     about: "Biz haqimizda",
     contact: "Kontakt",
@@ -27,11 +28,19 @@ const language = {
     contact_name: "Ism Familyangiz",
     contact_tel: "Telefon raqamingiz",
     send: "Yuborish",
+    system_enter: "Tizimga kirish",
+    email: "Email",
+    password: "Parol",
+    forgot: "Parolingizni unutdingizmi?",
+    administrator: "Administrator",
+    main_page: "Asosiy sahifa",
+    top: "yuqoriga",
   },
   ru: {
+    id: "ru",
     main: "Домашняя страница",
     about: "О нас",
-    contact:"Контакт",
+    contact: "Контакт",
     course: "Наши курсы",
     news: "Новости",
     enter: "Войти",
@@ -57,8 +66,16 @@ const language = {
     contact_name: "Полное имя",
     contact_tel: "Телефонный номер",
     send: "Отправлять",
+    system_enter: "Вход в систему",
+    email: "Эл. адрес",
+    password: "Пароль",
+    forgot: "Tы забыл пароль?",
+    administrator: "Администратор",
+    main_page: "Домашняя страница",
+    top: "к началу",
   },
   en: {
+    id: "en",
     main: "Home page",
     about: "About us",
     contact: "Contact",
@@ -83,6 +100,13 @@ const language = {
     contact_name: "Full name",
     contact_tel: "Phone number",
     send: "Send",
+    system_enter: "Enterance for the sytem",
+    email: "Email",
+    password: "Password",
+    forgot: "Did you forget password?",
+    administrator: "Administrator",
+    main_page: "Home page",
+    top: "top",
   },
 };
 

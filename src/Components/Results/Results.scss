@@ -3,15 +3,16 @@
 .result{
     display: flex;
     flex-direction: column;
+    align-items: center;
     &__num{
-        color: #fff;
+        color:#FBB900;
         font-weight: 700;
         font-size: 36px;
         line-height: 125%;
         margin-bottom: 8px;
     }
     &__people{
-        color: #fff;
+        color: #FBB900;
         font-weight: 500;
         font-size: 20px;
         line-height: 125%;

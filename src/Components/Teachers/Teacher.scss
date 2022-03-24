@@ -40,9 +40,17 @@
     }
     &__contact{
         margin-top: 20px;
-        display: block;
+        display: flex;
         justify-content: flex-start;
         align-items: center;
+        &--img{
+        fill: #121F42;
+        transition: .3s;
+        &:hover{
+            fill: #FBB900;
+            transition: .3s;
+        }
+        }
     }
     &__link{
         margin-right: 32px;

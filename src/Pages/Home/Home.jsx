@@ -11,10 +11,10 @@ import teacher4 from "../../images/teacher4.png";
 import subject from '../../images/subject.png';
 import news from '../../images/news.png';
 import teacher_subject from '../../images/teacher.png';
-import telegram from "../../images/telegram.svg";
-import instagram from "../../images/instagram.svg";
-import facebook from '../../images/facebook.svg';
-import phone from '../../images/phone.png';
+import {ReactComponent as Telegram} from "../../images/telegram.svg";
+import { ReactComponent as Instagram } from "../../images/instagram.svg";
+import { ReactComponent as Facebook } from "../../images/facebook.svg";
+import phone from '../../images/phone.svg';
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,20 +26,29 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { ThemeContext } from '../../Contexts/Context';
 import { useContext } from 'react';
-
-function Home(props){
+import student from '../../images/student-boy.png';
+function Home(){
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
-  const { lang, changeLang } = useContext(ThemeContext)
+  const { lang } = useContext(ThemeContext);
+   const handeScroll = (e) => {
+     let element = e.target;
+     console.log(element.scrollHeight, element.scrollTop, element.ClientHeight);
+   };
     return (
-      <div className="home">
-        <header id="1" className="home__heaeder">
+      <div className="home" onScrollCapture={handeScroll}>
+        <header id="1" className="home__header">
           <div className="container">
-            <div className="home__header--left">
-              <h1 className="home__header--title">{lang.main_title}</h1>
-              <div className="home__header--text">{lang.main_text}</div>
-              <a href="#" className="home__header--btn">
-                {lang.main_btn}
-              </a>
+            <div className="home__header--wrapper">
+              <div className="home__header--left">
+                <h1 className="home__header--title">{lang.main_title}</h1>
+                <div className="home__header--text">{lang.main_text}</div>
+                <a href="#" className="home__header--btn">
+                  {lang.main_btn}
+                </a>
+              </div>
+              <div className="home__header--right">
+                <img src={student} alt="" className="home__right--img" />
+              </div>
             </div>
           </div>
         </header>
@@ -87,7 +96,7 @@ function Home(props){
           </section>
           <section className="home__teachers">
             <div className="container">
-              <h2 className="home__teachers--title">{ lang.our_teachers}</h2>
+              <h2 className="home__teachers--title">{lang.our_teachers}</h2>
               <Swiper
                 modules={[Pagination, Navigation]}
                 spaceBetween={window.screen.width > 768 ? 150 : 100}
@@ -234,7 +243,7 @@ function Home(props){
           </section>
           <section id="4" className="home__news">
             <div className="container">
-              <h2 className="news__title">{ lang.news}</h2>
+              <h2 className="news__title">{lang.news}</h2>
               <div className="news__box">
                 <div className="news__wrapper">
                   <div className="news__img--wrapper">
@@ -248,14 +257,10 @@ function Home(props){
                       <span className="news__line--first line__left line__light"></span>
                     </div>
                   </div>
-                  <p className="news__text">
-                    {lang.news_text}
-                  </p>
+                  <p className="news__text">{lang.news_text}</p>
                 </div>
                 <div className="news__wrapper">
-                  <p className="news__text">
-                    {lang.news_text}
-                  </p>
+                  <p className="news__text">{lang.news_text}</p>
                   <div className="news__img--wrapper">
                     <div className="line__group">
                       <span className="news__line--first line__right"></span>
@@ -280,20 +285,29 @@ function Home(props){
                   </h3>
                   <input
                     type="text"
+                    name="name"
                     className="home__contact--input"
                     placeholder={lang.contact_name}
                   />
                   <input
                     type="tel"
+                    name="tel"
                     className="home__contact--input"
                     placeholder={lang.contact_tel}
                   />
+                  <textarea
+                    name="text"
+                    id=""
+                    cols="30"
+                    rows="5"
+                    className="home__contact--input"
+                  ></textarea>
 
                   <button type="submit" className="home__contact--submit">
                     {lang.send}
                   </button>
                 </form>
-                <h2 className="home__contact--title">{ lang.contact}</h2>
+                <h2 className="home__contact--title">{lang.contact}</h2>
               </div>
             </div>
           </section>
@@ -304,10 +318,10 @@ function Home(props){
               <ul className="home__footer--social">
                 <li className="home__footer--item">
                   <a href="#0" className="home__footer--link landing">
-                     {lang.main}
+                    {lang.main}
                   </a>
                   <a href="#2" className="home__footer--link landing">
-                   {lang.about}
+                    {lang.about}
                   </a>
                   <a href="#3" className="home__footer--link landing">
                     {lang.course}
@@ -316,38 +330,32 @@ function Home(props){
                     {lang.news}
                   </a>
                   <a href="#5" className="home__footer--link landing">
-                   {lang.contact}
+                    {lang.contact}
                   </a>
                 </li>
                 <li className="home__footer--item">
                   <span className="home__footer--media">
                     <a href="#" className="home__footer--link">
                       {" "}
-                      <img
-                        src={telegram}
-                        alt=""
-                        className="home__footer--img"
-                      />{" "}
+                      <Telegram className="home__footer--img" />
                     </a>
                   </span>
                   <span className="home__footer--media">
                     <a href="#" className="home__footer--link">
                       {" "}
-                      <img
-                        src={facebook}
-                        alt=""
-                        className="home__footer--img"
-                      />{" "}
+                      <a href="#" className="home__footer--link">
+                        {" "}
+                        <Instagram className="home__footer--img" />
+                      </a>
                     </a>
                   </span>
                   <span className="home__footer--media">
                     <a href="#" className="home__footer--link">
                       {" "}
-                      <img
-                        src={instagram}
-                        alt=""
-                        className="home__footer--img"
-                      />{" "}
+                      <a href="#" className="home__footer--link">
+                        {" "}
+                        <Facebook  className="home__footer--img" />
+                      </a>
                     </a>
                   </span>
                 </li>

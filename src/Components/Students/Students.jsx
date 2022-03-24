@@ -10,7 +10,7 @@ import { ThemeContext } from '../../Contexts/Context';
 
 
 export function Students(props) {
-   const {lang, chooseLang} = useContext(ThemeContext)
+   const {lang} = useContext(ThemeContext)
     const img = [student1, student2, student3];
     const [currentSlide, setCurrentSlide] = useState(1);
  
@@ -22,7 +22,7 @@ export function Students(props) {
           <ul className="student__list">
             <button
               className={`student__arrow--left ${
-                currentSlide == 0 ? "arrow__disabled" : ""
+                currentSlide === 0 ? "arrow__disabled" : ""
               }`}
               onClick={(e) =>
                 currentSlide > 0
@@ -34,10 +34,10 @@ export function Students(props) {
             </button>
             <button
               className={`student__arrow--right ${
-                currentSlide == length - 1 ? "arrow__disabled" : ""
+                currentSlide === length - 1 ? "arrow__disabled" : ""
               }`}
               onClick={(e) =>
-                currentSlide != length - 1
+                currentSlide !== length - 1
                   ? setCurrentSlide(currentSlide + 1)
                   : currentSlide
               }
