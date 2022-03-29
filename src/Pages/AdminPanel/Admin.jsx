@@ -8,7 +8,28 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../Contexts/Context';
 import { useContext } from 'react';
 export function Admin(props) {
-    const { lang, changeLang } = useContext(ThemeContext);
+  const { lang, changeLang } = useContext(ThemeContext);
+  const handleLogin = e => {
+    e.preventDefault();
+    const {name, password} = e.target.elements;
+    fetch("https://crm-joygroup.herokuapp.com/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({
+        admin_name: name.value, 
+        admin_password:password.value
+      })
+    })
+      .then(res => res.json())
+      .then(message => {
+        if (message.status == 200) {
+          window.location.href = "https://heroic-mochi-ebe693.netlify.app/";
+        }
+      });
+
+  }
     return (
       <div className="login">
         <div className="login__wrapper">
@@ -44,15 +65,17 @@ export function Admin(props) {
               <span className="login__edu--name">Joy Academy</span>
             </div>
             <h2 className="login__title">{lang.system_enter}</h2>
-            <form className="login__form">
+            <form className="login__form" onSubmit={handleLogin}>
               <input
-                type="email"
+                type="text"
+                name='name'
                 className="login__email"
-                placeholder={lang.email}
+                placeholder={lang.name}
               />
               <span className="login__email--valid"></span>
               <input
                 type="password"
+                name='password'
                 className="login__password"
                 placeholder={lang.password}
               />

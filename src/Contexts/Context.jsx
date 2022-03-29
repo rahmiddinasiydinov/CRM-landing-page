@@ -35,6 +35,7 @@ const language = {
     administrator: "Administrator",
     main_page: "Asosiy sahifa",
     top: "yuqoriga",
+    name: "Ismingiz",
   },
   ru: {
     id: "ru",
@@ -73,6 +74,7 @@ const language = {
     administrator: "Администратор",
     main_page: "Домашняя страница",
     top: "к началу",
+    name: "Имя",
   },
   en: {
     id: "en",
@@ -107,6 +109,7 @@ const language = {
     administrator: "Administrator",
     main_page: "Home page",
     top: "top",
+    name:"Name"
   },
 };
 
