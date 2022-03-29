@@ -36,6 +36,10 @@ const language = {
     main_page: "Asosiy sahifa",
     top: "yuqoriga",
     name: "Ismingiz",
+    error: "Muaffaqiyatsiz urinish",
+    ans_positive: "Murojatingiz qabul qilindi!",
+    ans_medium: "Siz so'zov yuborgansiz, iltimos kuting!",
+    ans_negative: "Iltimos ma'lumotlarni to'gri kiriting!",
   },
   ru: {
     id: "ru",
@@ -75,6 +79,10 @@ const language = {
     main_page: "Домашняя страница",
     top: "к началу",
     name: "Имя",
+    error: "Неудачная попытка",
+    ans_positive: "Ваша заявка принята",
+    ans_medium: "Вы отправили заявку, подождите!",
+    ans_negative: "Пожалуйста, вводите информацию правильно!",
   },
   en: {
     id: "en",
@@ -109,7 +117,11 @@ const language = {
     administrator: "Administrator",
     main_page: "Home page",
     top: "top",
-    name:"Name"
+    name: "Name",
+    error: "Unsuccessful attempt",
+    ans_positive: "Your application has been accepted!",
+    ans_medium: "You have submitted an application, please wait!",
+    ans_negative: "Please, enter valid information!",
   },
 };
 

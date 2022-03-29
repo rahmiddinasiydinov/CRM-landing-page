@@ -6,9 +6,10 @@ import eng from '../../images/eng.png';
 import login from '../../images/login.png'
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../Contexts/Context';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 export function Admin(props) {
   const { lang, changeLang } = useContext(ThemeContext);
+  const error = useRef();
   const handleLogin = e => {
     e.preventDefault();
     const {name, password} = e.target.elements;
@@ -26,6 +27,12 @@ export function Admin(props) {
       .then(message => {
         if (message.status == 200) {
           window.location.href = "https://heroic-mochi-ebe693.netlify.app/";
+        } else {
+          error.current.classList.add('login__validation--error');
+          setTimeout(() => {
+          error.current.classList.remove("login__validation--error");
+            
+          }, 3000)
         }
       });
 
@@ -68,19 +75,21 @@ export function Admin(props) {
             <form className="login__form" onSubmit={handleLogin}>
               <input
                 type="text"
-                name='name'
+                name="name"
                 className="login__email"
                 placeholder={lang.name}
               />
               <span className="login__email--valid"></span>
               <input
                 type="password"
-                name='password'
+                name="password"
                 className="login__password"
                 placeholder={lang.password}
               />
-              <span className="login__password--valid"></span>
-              <span className="login__forgot">{lang.forgot}</span>
+              <div className="login__validation">
+                <span ref={error} className="login__validation--text">{ lang.error}</span>
+                <span className="login__forgot">{lang.forgot}</span>
+              </div>
               <button type="submit" className="login__btn">
                 {lang.enter}
               </button>

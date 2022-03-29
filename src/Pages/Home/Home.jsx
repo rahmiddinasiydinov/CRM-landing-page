@@ -25,15 +25,57 @@ import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { ThemeContext } from '../../Contexts/Context';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import student from '../../images/student-boy.png';
 function Home(){
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
   const { lang } = useContext(ThemeContext);
+  const appeal = useRef();
    const handeScroll = (e) => {
-     let element = e.target;
+     const element = e.target;
      console.log(element.scrollHeight, element.scrollTop, element.ClientHeight);
    };
+  const handleAppeal = e => {
+    e.preventDefault();
+    const {name, tel} = e.target.elements;
+    console.log(name.value, tel.value);
+    fetch("https://crm-joygroup.herokuapp.com/appeals", {
+      method:"POST", 
+      headers: {
+        "Content-Type":"application/json"
+      }, 
+      body: JSON.stringify({
+        user_name: name.value, 
+        user_phone:tel.value.toString()
+      })
+    })
+    .then(res => res.json())
+      .then(message => {
+        console.log(message)
+        if (message.status == 201) {
+          appeal.current.textContent = lang.ans_positive;
+          appeal.current.classList.add('green');
+          setTimeout(() => {
+            appeal.current.classList.remove("green")
+          }, 5000)
+        }
+        else if (message.status = 400) {
+          appeal.current.textContent = lang.ans_medium;
+            appeal.current.classList.add("yellow");
+            setTimeout(() => {
+              appeal.current.classList.remove("yellow");
+            }, 5000);
+          
+        } else {
+          appeal.current.textContent = lang.ans_negative;
+            appeal.current.classList.add("red");
+            setTimeout(() => {
+              appeal.current.classList.remove("red");
+            }, 5000);
+          
+        }
+    })
+   }
     return (
       <div className="home" onScrollCapture={handeScroll}>
         <header id="1" className="home__header">
@@ -279,7 +321,7 @@ function Home(){
           <section id="5" className="home__contact">
             <div className="container">
               <div className="home__contact--wrapper">
-                <form action="#" className="home__contact--form">
+                <form action="#" className="home__contact--form" onSubmit={handleAppeal}>
                   <h3 className="home__contact--subtitle">
                     {lang.contact_title}
                   </h3>
@@ -293,16 +335,11 @@ function Home(){
                     type="tel"
                     name="tel"
                     className="home__contact--input"
-                    placeholder={lang.contact_tel}
+                    placeholder={"998xxxxxxxxx"}
+                    style ={{marginBottom:5}}
                   />
-                  <textarea
-                    name="text"
-                    id=""
-                    cols="30"
-                    rows="5"
-                    className="home__contact--input"
-                  ></textarea>
-
+                  <span ref={appeal} className="home__contact--popup"></span>
+                   
                   <button type="submit" className="home__contact--submit">
                     {lang.send}
                   </button>

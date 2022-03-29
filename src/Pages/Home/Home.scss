@@ -183,9 +183,14 @@
             font-size: 20px;
             line-height: 140%;
         }
+        &--popup{
+            font-size: 14px;
+            opacity: 0;
+            transition: .5s ease-out;
+        }
         &--input{
             @include input;
-            
+           
         }
         &--submit{
             @include input;
@@ -376,7 +381,21 @@
     
     
 }
-
+.red{
+    color: #FF1818 !important;
+    transition: .5s ease-out !important;
+    opacity: 1;
+}
+.yellow{
+    color: #FF9300 !important;
+    transition: .5s ease-out !important;
+    opacity: 1;
+}
+.green{
+    color: #00FF00 !important ;
+    transition: .5s ease-out !important;
+    opacity: 1;
+}
 @media screen and (max-width:768px) {
     .home{
         padding:50 0  0;
