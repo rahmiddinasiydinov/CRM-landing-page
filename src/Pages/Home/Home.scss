@@ -196,7 +196,19 @@
             @include input;
             margin-top: 62px;
             color: #F0F0F0;
-            background-color: #121F42;;
+            background-color: #121F42;
+            transition: .3s ease;
+            cursor: pointer;
+            &:hover{
+                background-color: rgba($color: #121F42, $alpha: 0.2);
+                color: #121F42;
+                transition: .3s ease;
+            };
+            &:active{
+                background-color: #000000;
+                transition: .3s ease;
+                color: #ffffff;
+            }
             
         }
         

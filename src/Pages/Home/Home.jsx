@@ -84,7 +84,7 @@ function Home(){
               <div className="home__header--left">
                 <h1 className="home__header--title">{lang.main_title}</h1>
                 <div className="home__header--text">{lang.main_text}</div>
-                <a href="#" className="home__header--btn">
+                <a href="#3" className="home__header--btn">
                   {lang.main_btn}
                 </a>
               </div>

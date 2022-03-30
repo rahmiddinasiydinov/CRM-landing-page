@@ -46,7 +46,7 @@ export function Subject(props) {
             <span className="subject__duration--value">{price} so'm</span>
           </div>
         </div>
-        <a fref="#" className="subject__btn">Ro’yxatdan o’tish</a>
+        <a href="#5" className="subject__btn">Ro’yxatdan o’tish</a>
       </li>
     );
 }
